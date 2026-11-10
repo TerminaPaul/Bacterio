@@ -1,4 +1,4 @@
-"Contient toutes les constantes du jeu."
+'''Contient toutes les constantes du jeu.'''
 RATIOS = {1: [4, 3], 2: [5, 3]}
 REFERENCE_PX = 200
 TAILLE_DECK = 5
