@@ -5,7 +5,7 @@ import constantes
 class Deck:
     """Le deck : une liste."""
     def __init__(self, indice):
-        """Construit le jeu.
+        """Construit le deck.
 
         Entrées : indice — un entier (soit 1 soit 2)
         Sortie  : aucune, un attribut sont créé : deck, une liste de cinq cartes
