@@ -5,7 +5,15 @@ import constantes
 
 
 class Jeu:
+    """Le jeu : une fenêtre, 2 joueurs, running et clock."""
     def __init__(self, screen):
+        """Construit le jeu.
+
+        Entrées : screen — la fenêtre
+        Sortie  : aucune, quatre attributs sont créés : screen, running (un booléen),
+                  clock (limite de FPS), et joueurs, une liste des 2 joueurs
+        Précondition : aucune
+        """
         self.screen = screen
         self.running = True
         self.clock = pygame.time.Clock()
@@ -13,6 +21,12 @@ class Jeu:
         self.joueur_2 = Joueur(650, 0, 2)
 
     def gestion_des_events(self):
+        """Gère les évènements dans le jeu.
+
+        Entrées : aucune, en dehors de self
+        Sortie  : aucune, les attributs qui des évènements sont modifiés.
+        Précondition : aucune
+        """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -29,6 +43,13 @@ class Jeu:
         pygame.display.flip()
 
     def run(self):
+        """Gère la boucle du jeu.
+
+        Entrées : aucune, en dehors de self
+        Sortie  : aucune, permet de faire tourner le jeu
+                  tant qu'il est lancé.
+        Précondition : aucune
+        """
         while self.running:
             self.gestion_des_events()
             self.actualisation()
@@ -37,6 +58,7 @@ class Jeu:
 
 
 if __name__ == "__main__":
+    # Initialisation et lancement du jeu
     pygame.init()
     pygame.display.set_caption("Jeu")
     ratio = constantes.RATIOS[1]
